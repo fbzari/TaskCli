@@ -15,10 +15,10 @@
 ## Installation
 
 1. **Download the Executable**:
-   - You can download the latest executable from the [Releases](https://github.com/your-repo/TaskCli/releases) section of this repository.
+   - You can download the latest executable from the [Releases](https://github.com/fbzari/TaskCli/releases) section of this repository.
 
 2. **Set Up Environment Variable**:
-   - Add the `TaskCli.exe` file to your system's PATH environment variable to run the CLI from any command prompt. For more details visit the [Releases](https://github.com/your-repo/TaskCli/releases) 
+   - Add the `TaskCli.exe` file to your system's PATH environment variable to run the CLI from any command prompt. For more details visit the [Releases](https://github.com/fbzari/TaskCli/releases) 
 
 ## Usage
 
