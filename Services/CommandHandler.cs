@@ -25,7 +25,7 @@ namespace TaskCli.Services
                 case "add":
                     if (args.Length > 1)
                     {
-                        string description = args[1];
+                        string description = string.Join(" ", args.Skip(1));
                         int result = _taskService.AddTasks(description);
                         Console.WriteLine($"Task added successfully (ID: {result})");
                     }
@@ -38,7 +38,7 @@ namespace TaskCli.Services
                 case "update":
                     if (args.Length > 2 && int.TryParse(args[1], out int taskId) && !string.IsNullOrEmpty(args[2]))
                     {
-                        string desc = args[2];
+                        string desc = string.Join(" ", args.Skip(2));
                         _taskService.UpdateTasks(taskId, desc);
                         Console.WriteLine("Task updated successfully");
                     }
@@ -172,14 +172,23 @@ namespace TaskCli.Services
         #region Helper Function
         private void DisplayTasks(Dictionary<int, Tasks> tasks)
         {
-            Console.WriteLine("Id | Description        | Progress");
-            Console.WriteLine("---|--------------------|----------");
+            int maxIdLength = tasks.Keys.Max().ToString().Length;
+            int maxDescriptionLength = tasks.Values.Max(task => task.Description.Length);
+            int maxProgressLength = tasks.Values.Max(task => task.Progress.ToString().Length);
+
+            maxIdLength = Math.Max(maxIdLength, 2); 
+            maxDescriptionLength = Math.Max(maxDescriptionLength, 18); 
+            maxProgressLength = Math.Max(maxProgressLength, 10); 
+
+            Console.WriteLine($"{"Id".PadRight(maxIdLength)} | {"Description".PadRight(maxDescriptionLength)} | {"Progress".PadRight(maxProgressLength)}");
+            Console.WriteLine($"{new string('-', maxIdLength)}-|-{new string('-', maxDescriptionLength)}-|-{new string('-', maxProgressLength)}");
 
             foreach (var task in tasks)
             {
-                Console.WriteLine($"{task.Key,-2} | {task.Value.Description,-18} | {task.Value.Progress}");
+                Console.WriteLine($"{task.Key.ToString().PadRight(maxIdLength)} | {task.Value.Description.PadRight(maxDescriptionLength)} | {task.Value.Progress.ToString().PadRight(maxProgressLength)}");
             }
         }
+
 
         // Method to show usage instructions
         private void ShowListUsage()
