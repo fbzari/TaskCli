@@ -1,44 +1,29 @@
-# TaskCli Application
+# TaskCli
 
-## Setting Up the Environment Variable
+**TaskCli** is a command-line interface (CLI) application designed for managing tasks efficiently. It provides various functionalities for adding, updating, deleting, and listing tasks, along with marking tasks as in-progress or done. The CLI tool is built with .NET and offers a straightforward way to handle tasks using commands.
 
-To use the `TaskCli` application from the command line without specifying the full path to the executable, you need to set an environment variable to include the path to the `TaskCli` executable.
+## Features
 
-### For Windows
+- **Add Task**: Add new tasks with a description.
+- **Update Task**: Modify the description of an existing task by its ID.
+- **Mark In-Progress**: Update the status of a task to "in-progress".
+- **Mark Done**: Update the status of a task to "done".
+- **Delete Task**: Remove a task by its ID.
+- **Delete All Tasks**: Clear all tasks from the list.
+- **List Tasks**: Display tasks with filtering options by status (done, todo, in-progress).
 
-1. **Locate Your Executable:**
-   Ensure you know the directory where `TaskCli.exe` is located. For example, if it is in `C:\Developer\Project\Publish\`, that is the path you will use.
+## Installation
 
-2. **Open Environment Variables:**
-   - Press `Win + R` to open the Run dialog.
-   - Type `sysdm.cpl` and press Enter to open the System Properties window.
-   - Go to the `Advanced` tab and click on `Environment Variables`.
+1. **Download the Executable**:
+   - You can download the latest executable from the [Releases](https://github.com/your-repo/TaskCli/releases) section of this repository.
 
-3. **Edit the Path Variable:**
-   - In the `System variables` section, find the `Path` variable and select it.
-   - Click `Edit`.
-   - In the `Edit Environment Variable` dialog, click `New` and add the directory path where `TaskCli.exe` is located (e.g., `C:\Developer\Project\Publish\`).
+2. **Set Up Environment Variable**:
+   - Add the `TaskCli.exe` file to your system's PATH environment variable to run the CLI from any command prompt. For more details visit the [Releases](https://github.com/your-repo/TaskCli/releases) 
 
-4. **Apply Changes:**
-   - Click `OK` to close each dialog box.
-   - You might need to restart your command prompt or computer for the changes to take effect.
+## Usage
 
-5. **Verify Setup:**
-   - Open a new command prompt.
-   - Type `TaskCli` and press Enter. If everything is set up correctly, you should see the TaskCli application prompt or output.
+Run `TaskCli` from the command line with the following commands:
 
-### For macOS and Linux
-
-1. **Locate Your Executable:**
-   Ensure you know the directory where `TaskCli` is located.
-
-2. **Open Terminal:**
-   - Open a Terminal window.
-
-3. **Edit Your Shell Configuration:**
-   - For `bash`, open `~/.bashrc` or `~/.bash_profile`.
-   - For `zsh`, open `~/.zshrc`.
-
-   You can use a text editor such as `nano` or `vim`:
-   ```bash
-   nano ~/.bashrc  # or ~/.zshrc
+- **Run Task CLI in CMD**:
+  ```sh
+  TaskCli 
