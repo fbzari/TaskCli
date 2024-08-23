@@ -1,5 +1,7 @@
 # TaskCli
 
+Sample solution for the [task-tracker](https://roadmap.sh/projects/task-tracker) challenge from [roadmap.sh](https://roadmap.sh/).
+
 **TaskCli** is a command-line interface (CLI) application designed for managing tasks efficiently. It provides various functionalities for adding, updating, deleting, and listing tasks, along with marking tasks as in-progress or done. The CLI tool is built with .NET and offers a straightforward way to handle tasks using commands.
 
 ## Features
